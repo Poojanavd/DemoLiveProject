@@ -7,7 +7,7 @@ Feature: Registration functionality scenarios
     When I provide all the below valid details
     	| FirstName | Ravi 									|
     	| LastName  | Kiran 								|
-    	| Email			| Ravi.kiran2@gmail.com |
+    	| Email			| Ravi.kiran098@gmail.com |
     	| Telephone	| 9212345678						|
     	| Password	| rkiran								|
     And I select the Privacy Policy
