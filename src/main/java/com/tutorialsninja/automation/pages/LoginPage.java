@@ -8,6 +8,8 @@ import com.tutorialsninja.automation.base.Base;
 import com.tutorialsninja.automation.framework.Elements;
 
 public class LoginPage {
+	
+	Base b = new Base();
 
 	public LoginPage() {
 		PageFactory.initElements(Base.driver, this);
@@ -35,5 +37,11 @@ public class LoginPage {
 		Elements.TypeText(LoginPage.emailField, email);
 		Elements.TypeText(LoginPage.passwordField, password);
 		Elements.click(LoginPage.loginButton);
+	}
+	
+	public static void doLogin() {
+		Elements.TypeText(emailField, Base.reader.getUsername());
+    	Elements.TypeText(passwordField, Base.reader.getPassword());
+    	Elements.click(loginButton);
 	}
 }
