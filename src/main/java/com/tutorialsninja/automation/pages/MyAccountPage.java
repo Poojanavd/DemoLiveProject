@@ -6,20 +6,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.tutorialsninja.automation.base.Base;
 
-public class HeaderPage {
-	
-	public HeaderPage() {
+public class MyAccountPage {
+
+	public MyAccountPage() {
 		PageFactory.initElements(Base.driver, this);
 	}
-
-	@FindBy(xpath="//span[text()=\"My Account\"]")
-	public static WebElement myAccountLink;
 	
-	@FindBy(linkText="Register")
-	public static WebElement register;
-	
-	@FindBy(linkText="Login")
-	public static WebElement login;
-	
-	
+	@FindBy(linkText="Register for an affiliate account")
+	public static WebElement registerAffiliateAccount;
 }
