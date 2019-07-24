@@ -40,16 +40,45 @@ public class RegisterPage {
 	
 	@FindBy(xpath="//input[@value=\"Continue\"]")
 	public static WebElement continueButton;
+	
+	@FindBy(linkText = "Register")
+	public static WebElement registerBreadcrumb;
+	
+	@FindBy(css="input[id='input-firstname']+div")
+	public static WebElement FirstNameWarning;
+	
+	@FindBy(css="input[id='input-lastname']+div")
+	public static WebElement LastNameWarning;
+	
+	@FindBy(css="input[id='input-email']+div")
+	public static WebElement EmailWarning;
+	
+	@FindBy(css="input[id='input-telephone']+div")
+	public static WebElement TelephoneWarning;
+	
+	@FindBy(css="input[id='input-password']+div")
+	public static WebElement PasswordWarning;
+	
+	@FindBy(css="div[class$='alert-dismissible']")
+	public static WebElement MainWarning;
+	
+	@FindBy(css="input[name='newsletter'][value='1']")
+	public static WebElement SubscribeButton;
 
-	public static void enterAllRegistrationDetails(DataTable dataTable) {
+	public static void enterAllRegistrationDetails(DataTable dataTable,String detailType) {
 		Map<String, String> map = dataTable.asMap(String.class, String.class);
 
 		Elements.TypeText(RegisterPage.firstName, map.get("FirstName"));
 		Elements.TypeText(RegisterPage.lastName, map.get("LastName"));
-		Elements.TypeText(RegisterPage.email, System.currentTimeMillis()+map.get("Email"));
 		Elements.TypeText(RegisterPage.telephone, map.get("Telephone"));
 		Elements.TypeText(RegisterPage.password, map.get("Password"));
 		Elements.TypeText(RegisterPage.confirmPassword, map.get("Password"));
+		
+		if(detailType.equalsIgnoreCase("duplicate"))
+			Elements.TypeText(RegisterPage.email, map.get("Email"));
+		else
+			Elements.TypeText(RegisterPage.email, System.currentTimeMillis()+map.get("Email"));
+		
 	}
 
 }
