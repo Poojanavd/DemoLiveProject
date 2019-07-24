@@ -14,7 +14,6 @@ public class Test {
 	WebDriverManager.chromedriver().setup();
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
-	driver.get("http://toolsqa.com/automation-practice-form/");
 	
 	
 	JavascriptExecutor exe=((JavascriptExecutor) driver);

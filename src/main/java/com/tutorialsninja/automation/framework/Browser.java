@@ -69,8 +69,7 @@ public class Browser {
 			log.info("Exception has Occured while taking screenshot");
 			return null;
 		}
-
-		
+	
 
 	}
 }
