@@ -21,5 +21,9 @@ public class HeaderPage {
 	@FindBy(linkText="Login")
 	public static WebElement login;
 	
+	@FindBy(name="search")
+	public static WebElement searchboxField;
 	
+	@FindBy(css="button[class$='btn-lg']")
+	public static WebElement searchboxsubmit;
 }

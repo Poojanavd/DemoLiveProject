@@ -16,6 +16,7 @@ public class Test {
 	driver.manage().window().maximize();
 	driver.get("http://toolsqa.com/automation-practice-form/");
 	
+	
 	JavascriptExecutor exe=((JavascriptExecutor) driver);
 	//exe.executeScript("arguments[0].value=\"Hello\"", driver.findElement(By.xpath("//input[@name='q']")));
 	exe.executeScript("document.body.style.zoom='100%'");
